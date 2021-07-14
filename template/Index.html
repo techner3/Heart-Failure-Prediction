@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Heart Failure Predcitor</title>
+        <link rel="icon" href="{{ url_for('static', filename='./Heart.png') }}" type="image/png">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Style.css') }}">
+        <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
+    </head>
+    <body>
+
+<!-- Background & animion & navbar & title -->
+  <div class="container-fluid">
+<!-- Background animtion-->
+    <div class="background">
+       <div class="cube"></div>
+       <div class="cube"></div>
+       <div class="cube"></div>
+       <div class="cube"></div>
+    </div>
+<!-- header -->
+   <header>
+        <!-- Website Title -->
+    	<div class="heading-container"style="line-height:10px">
+            <h2 class="heading">Heart Failure Predcitor</h2>
+            <div class='description'>
+    			<p>A Machine Learning App built using Flask and deployed using Heroku</p>
+    		</div>
+    	</div>
+  </header>
+  <div class="model-container">
+    <form action="{{ url_for('predict') }}" method="POST">
+        <input class="form-input" type="text" name="age" placeholder="Age (Years)"><br>
+        <div class='label-class'>
+            <input class="form-input" type="radio" name="sex"value="1"><label for="male">Male</label>
+            <input class="form-input" type="radio" name="sex"value="0"> <label for="female">Female</label><br>
+        </div>
+        <input class="form-input" type="text" name="creatinine_phosphokinase" placeholder="Level of CPK enzyme in the blood (mcg/L)"><br>
+        <div class='label-class'>
+            <input class="form-input" type="radio" name="diabetes"value="1"><label for="diabetes">Diabetes</label>
+            <input class="form-input" type="radio" name="diabetes"value="0"><label for="no-diabetes">No Diabetes</label><br>
+        </div>
+        <input class="form-input" type="text" name="ejection_fraction" placeholder="Blood leaving the heart at each contraction (%)"><br>
+        <div class='label-class'>
+            <input class="form-input"type="radio" name="high blood pressure" value="1"><label for="high blood pressure">High BP</label>
+            <input class="form-input"type="radio" name="high blood pressure" value="0"><label for="no-high blood pressure">No High BP</label><br>
+        </div>
+        <input class="form-input" type="text" name="platelets" placeholder="Platelets in the blood (kiloplatelets/mL)"><br>
+        <div class='label-class'>
+            <input class="form-input"type="radio" name="anaemia" value="1"><label for="anaemia">Anaemia</label>
+            <input class="form-input"type="radio" name="anaemia" value="0"><label for="no-anaemia">Healthy</label><br>
+        </div>
+        <input class="form-input" type="text" name="serum_creatinine" placeholder="Level of serum creatinine in the blood (mg/dL)"><br>
+        <input class="form-input" type="text" name="serum_sodium" placeholder="Level of serum sodium in the blood (mEq/L)"><br>
+        <div class='label-class'>
+            <input class="form-input" type="radio" name="smoking"value="1"><label for="smoker">Smoker</label>
+            <input class="form-input" type="radio" name="smoking"value="0"><label for="non-smoker">Non-Smoker</label><br>
+        </div>
+        <input class="form-input" type="text" name="time" placeholder="Follow-up period (Days)"><br>
+        <input type="submit" class="submit-button" value="Predict">
+    </form>
+</div>
+ <!-- Footer -->
+<div class='footer'>
+<div class="contact">
+    <p align="center"><a target="_blank" href="https://github.com/techner3"><i class="fab fa-github fa-lg contact-icon"></i></a>
+    <a target="_blank" href="https://www.linkedin.com/in/bala-murali-138987199/"><i class="fab fa-linkedin fa-lg contact-icon"></i></a></p>
+    <p align="center">Developed with  ❤️  by Balamurali K</p>
+</div>
+</div>
+</body>
+</html>
