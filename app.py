@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 import joblib
 import numpy as np
 
-model = joblib.load('./Best_Model.pkl')
+model = joblib.load('./Best_model.pkl')
 scaler=joblib.load('./scaler.pkl')
 app = Flask(__name__,template_folder='template')
 
